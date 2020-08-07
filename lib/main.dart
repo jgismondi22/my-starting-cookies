@@ -83,7 +83,7 @@ void main() {
   }
 }
 */
-class MyCard extends StatelessWidget {
+/*class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
@@ -163,4 +163,41 @@ class MyCard extends StatelessWidget {
       ),
     );
   }
+}
+*/
+class MyCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var leftDiceNumber = 5;
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.red,
+        appBar: AppBar(
+          title: Text('Diceed'),
+          centerTitle: true,
+          backgroundColor: Colors.deepPurpleAccent,
+        ),
+        body: Center(
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: FlatButton(
+                  onPressed: (){
+                    print('Left Button on Pressed');
+                  },
+                  child: Image.asset('images/dice$leftDiceNumber.jpg'),),
+                ),
+              Expanded(
+               child: FlatButton(
+                 onPressed: (){
+                   print('Right Button Pressed!');
+                 },
+                 child: Image.asset('images/dice2.jpg'),),
+               ),
+              ],
+          ),
+        ),
+        ),
+      );
+}
 }
